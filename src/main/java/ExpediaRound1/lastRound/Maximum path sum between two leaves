@@ -1,0 +1,49 @@
+
+--------------------------n^2 approach-------------------------------------
+static maxSum=0;
+
+void maxSumPathUtil(TreeNode root){
+
+if(root==null){
+    return;
+}
+
+int leftSum= maxLeafSum(root.left);
+int rightSum= maxLeafSum(root.right);
+
+maxSum=Math.max(leftSum+rightSum+root.data, maxSum);
+maxSumPathUtil(root.left);
+maxSumPathUtil(root.right);
+
+}
+
+int maxLeafSum(TreeNode root){
+if(root==null)
+return 0;
+return root.data+Math.max(maxLeafSum(root.left),maxLeafSum(root.right));
+}
+
+------------------------linear approach------------------------------------
+Idea: post order traversal and maintain two things
+1. Max sum path from (leaf of left Subtree to leaf of right subtree) including current node
+2. Max sum path to the leaf
+
+int maxSumPathUtil(TreeNode root){
+
+if(root==null)
+return 0;
+if(root.left==null && root.right==null) // both child does not exist
+return root.data;
+
+int leftSum=maxSumPathUtil(root.left);
+int rightSum=maxSumPathUtil(root.right);
+
+//if both child exist
+if(root.left!=null && root.right!=null){
+    maxSum=Math.max(maxSum,leftSum+rightSum+root.data);
+}
+
+return Math.max(ls, rs) + node.data;
+
+}
+

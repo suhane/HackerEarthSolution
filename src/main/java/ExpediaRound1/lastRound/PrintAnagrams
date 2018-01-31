@@ -1,0 +1,21 @@
+
+
+void printAnagrams(String s){
+
+int len=s.length();
+Queue<String> q= new LinkedList<String>();
+q.push(s.substring(0,1));
+while(q.peek().length==len){
+
+String tmp=q.poll();
+int l=tmp.length();
+for(int i=0;i<=l;i++){
+q.offer(tmp.substring(0,i)+s.substring(l,l+1)+tmp.substring(i,l));
+}
+}
+
+
+}
+
+
+}

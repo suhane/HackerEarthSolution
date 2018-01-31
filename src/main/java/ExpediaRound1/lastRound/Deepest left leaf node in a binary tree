@@ -1,0 +1,46 @@
+
+-------recursive approach-------------
+
+static maxLevel=0;
+static TreeNode result=null;
+
+void deepestLeftLeaf(TreeNode root, int level, boolean isLeft){
+
+if(root==null)
+return;
+
+if(isLeft==true && root.left==null && root.right==null && level>maxLevel){
+result=root;
+level=maxLevel;
+}
+
+deepestLeftLeaf(root.left,level+1,true);
+deepestLeftLeaf(root.right,level+1,false);
+
+}
+
+
+
+--iterative approach---------------
+
+
+Queue<TreeNode> q= new LinkedList<TreeNode>();
+if(root==null)
+return null;
+
+q.offer(root);
+TreeNode result=null;
+while(!q.isEmpty){
+TreeNode aux= q.poll();
+if(root.left!=null)
+q.offer(root.left)
+if(root.right!=null){
+q.offer(root.right);
+if(root.right.right==null && root.right.left==null){
+result=root.right;
+}
+
+return result;
+}
+
+}

@@ -1,0 +1,21 @@
+1. Define Sub problems and count how many there are?
+They can be in three categories:
+
+    1. prefix
+    2. Suffix
+    3. substrings
+
+2. To solve a sub problem Guess( a part of solution) and count the possibilities of that solution(Better be polynomial)
+3. Recurrence: Using that guess you write a recurrence relating the solution to the sub problem you want to solve in terms of smaller sub problem
+something you already know how to solve. When you do that you get some running time in order to compute that recurrence ignoring the recursion thats
+time for sub problem
+4. Recurse +memoize/ bottom up
+
+Figure out the topological order:
+
+for prefixes  its left to right with i increasing
+for suffixes its right to left with i decreasing
+for substring its increasing substring size
+
+5 Solve the original problem
+

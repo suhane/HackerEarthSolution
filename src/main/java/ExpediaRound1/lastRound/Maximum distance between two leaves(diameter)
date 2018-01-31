@@ -1,0 +1,48 @@
+
+--------------------------n^2 approach-------------------------------------
+static diameter=0;
+
+void maxDistanceUtil(TreeNode root){
+
+if(root==null){
+    return;
+}
+
+int leftPath= maxLeafPath(root.left);
+int rightPath= maxLeafPath(root.right);
+
+diameter=Math.max(leftPath+rightPath +1, diameter);
+maxDistanceUtil(root.left);
+maxDistanceUtil(root.right);
+
+}
+
+int maxLeafPath(TreeNode root){
+if(root==null)
+return 0;
+return 1+Math.max(maxLeafPath(root.left),maxLeafPath(root.right));
+}
+
+------------------------linear approach------------------------------------
+Idea: post order traversal and maintain two things
+1. Max distance from (leaf of left Subtree to leaf of right subtree) including current node
+2. Max distance to the leaf
+
+int diameterUtil(TreeNode root){
+
+if(root==null)
+return 0;
+
+
+int left=diameterUtil(root.left);
+int right=diameterUtil(root.right);
+
+//if both child exist
+if(root.left!=null && root.right!=null){
+    diameter=Math.max(diameter,left+right+1);
+}
+
+return Math.max(ls, rs) + 1;
+
+}
+

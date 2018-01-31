@@ -1,0 +1,13 @@
+Create Table user (id bigint(50) AUTO_INCREMENT,name varchar(1024) CHARACTER SET utf8,PRIMARY KEY (id));
+Create Table item (id bigint(50) AUTO_INCREMENT,name varchar(1024) CHARACTER SET utf8,description varchar(1024) CHARACTER SET utf8,PRIMARY KEY (id));
+Create Table item_purchased (
+id bigint(50) AUTO_INCREMENT,
+user_id bigint(50),
+item_id bigint(50),
+price_purchased varchar(50) CHARACTER SET utf8,
+cost_price varchar(50) CHARACTER SET utf8,
+extra_cost varchar(50) CHARACTER SET utf8,
+PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES user ON DELETE CASCADE ON UPDATE CASCADE,
+FOREIGN KEY (item_id) REFERENCES item ON DELETE CASCADE ON UPDATE CASCADE
+);

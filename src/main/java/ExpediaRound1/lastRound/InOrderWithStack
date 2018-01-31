@@ -1,0 +1,61 @@
+
+---------using  stack--------------
+void inOrder(TreeNode root){
+boolean flag=true;
+Stack<TreeNode> s1= new Stack<TreeNode>();
+Node current = root;
+while (flag)
+        {
+
+            if(current!=null){
+                s.push(current);
+                current=current.left;
+            }
+            else
+                if(s.isEmpty())
+                    flag=false;
+            else{
+                current=s.pop();
+                System.out.print(current.data);
+                current=current.right;
+            }
+
+        }
+}
+}
+
+
+---------using two stack--------------
+
+first do reverse pre-order traversal
+
+void postOrder(TreeNode root){
+Stack<TreeNode> s1= new Stack<TreeNode>();
+Stack<Integer> s2= new Stack<Integer>();
+
+if(root!=null)
+s1.push(root);
+while(!s.isEmpty()){
+
+TreeNode tmp=s1.pop();
+
+if(tmp.left!=null)
+s1.push(tmp.left);
+
+if(tmp.right!=null)
+s1.push(tmp.right);
+
+s2.push(tmp.data);
+
+}
+
+while(!s2.isEmpty()){
+System.out.print(s2.pop());
+}
+}
+
+
+
+
+
+}

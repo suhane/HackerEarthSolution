@@ -1,0 +1,9 @@
+
+static int count=0;
+
+int countNonLeaf(TreeNode root){
+
+if(root==null ||  (root.left==null && root.right==null))
+    return 0;
+return 1+ countNonLeaf(root.left)+countNonLeaf(root.right);
+}

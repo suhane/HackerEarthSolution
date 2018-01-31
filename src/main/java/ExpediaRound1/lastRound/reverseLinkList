@@ -1,0 +1,33 @@
+-----------------------iterative--------------------
+
+Node reverse(Node head){
+
+Node prev=null;
+Node current=head;
+
+while(current!=null){
+
+Node temp=current.next;
+current.next=prev;
+prev=current;
+current=temp;
+}
+return prev;
+}
+
+
+-----------------------recursive----------------------
+
+Node reverse(Node head){
+
+if(head==null)
+    return null;
+Node first=head;
+if(first.next==null)
+    return first;
+Node rest= reverse(first.next);
+first.next.next=first;
+first.next=null;
+return rest;
+
+}

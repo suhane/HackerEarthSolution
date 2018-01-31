@@ -88,24 +88,4 @@ public class MotivationProblem2 {
             out.print(res[i++]+" ");
         }
     }
-
-
-
-
-    private static void print(int[] a, int n, PrintWriter out) {
-        int i=0;
-        while(i<n){
-            out.print(a[i++] + " ");
-        }
-    }
-
-    private static void reverse(int[] a,int i, int k) {
-    while(i<k){
-        int temp=a[i];
-        a[i]=a[k];
-        a[k]=temp;
-        i++;
-        k--;
-    }
-    }
 }

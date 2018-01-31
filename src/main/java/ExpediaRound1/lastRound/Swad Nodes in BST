@@ -1,0 +1,34 @@
+
+TreeNode prev=null;
+TreeNode first,middle,last;
+
+public void findNodes(TreeNode current){
+if(current!=null){
+findNodes(current.left);
+if(prev!=null){
+    if(current.data<prev.data){
+        if(first==null){
+            first=prev;
+            middle=current;
+        }
+        else
+            last=current;
+
+    }
+}
+prev=current;
+findNodes(current.right);
+}
+
+}
+
+
+if(first!=null && last!=null){
+swap(first,last);
+}
+else if(first!=null && last==null){
+swap(first,middle)
+
+}
+
+}

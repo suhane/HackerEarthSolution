@@ -1,0 +1,45 @@
+
+printLeftDown(root)
+printLeaves(root)
+printRightUp(root.right);
+
+
+void printLeftDown(TreeNode root){
+if(root==null)
+return;
+
+if(root.left!=null){
+    System.out.print(root.data);
+    printLeftDown(root.left);
+}
+   else if(root.right!=null){
+        System.out.print(root.data);
+        printLeftDown(root.right)
+   }
+}
+
+
+void printBottomUp(TreeNode root){
+
+if(root==null)
+return;
+
+if(root.right!=null){
+printBottomUp(root.right);
+System.out.print(root.data+" ");
+}
+else
+if(root.left!=null){
+printBottomUp(root.left);
+System.out.print(root.data+" ");
+}
+}
+
+void printLeaves(TreeNode root){
+if(root==null)
+return;
+if(root.left==null && root.right==null)
+System.out.print(root.data+" ");
+printLeaves(root.left);
+printLeaves(root.right);
+}

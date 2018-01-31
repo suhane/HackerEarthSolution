@@ -1,0 +1,36 @@
+void detectAndRemoveLoop(Node head){
+
+Node slow=head;
+Node fast=head;
+
+while(slow!=null && fast!=null && fast.next!=null){
+
+if(slow==fast){
+    removeLoop(slow,head);
+    break;
+}
+slow=slow.next;
+fast=fast.next.next;
+}
+}
+----------------------------Method 1 ------------------------------
+void removeLoop(Node loop, Node head){
+Node ptr1=head;
+Node ptr2=null;
+while(1){
+    ptr2 = loop;
+    while(ptr2.next!=loop && ptr2.next!=ptr1){
+        ptr2=ptr2.next;
+    }
+    if(ptr2.next == ptr1)
+        break;
+}
+ptr2.next=null;
+}
+}
+
+----------------------------Method 2--------------------------------
+void removeLoop(Node loop, Node head){
+
+
+}
